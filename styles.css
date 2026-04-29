@@ -1,0 +1,41 @@
+#playimdb-wrapper {
+  margin-top: 12px;
+}
+
+#playimdb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #F5C518;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  border: none;
+  line-height: 1;
+  letter-spacing: 0.3px;
+}
+
+#playimdb-btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.02);
+}
+
+#playimdb-btn:active {
+  background-color: #d4a900;
+  transform: scale(0.99);
+}
+
+#playimdb-btn .playimdb-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+#playimdb-btn .playimdb-label {
+  line-height: 1;
+}

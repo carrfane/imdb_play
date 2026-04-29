@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Play on PlayIMDB",
+  "version": "1.0.0",
+  "description": "Adds a Play button on IMDB title pages that redirects to PlayIMDB.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.imdb.com/title/*", "https://www.imdb.com/*/title/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
