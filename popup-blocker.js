@@ -27,4 +27,29 @@
     configurable: false,
     enumerable: true
   });
+
+  // Block focus-stealing: ad scripts call iframe.blur() + window.focus() to pull
+  // keyboard focus away from the player iframe, breaking space/arrow key controls.
+  // Suppress window.focus() entirely — this page has no legitimate use for it.
+  Object.defineProperty(window, 'focus', {
+    value: function () { return; },
+    writable: false,
+    configurable: false,
+    enumerable: true
+  });
+
+  // Also block blur() on iframe elements specifically, since ad scripts call
+  // iframe.blur() just before window.focus() to complete the focus steal.
+  var _nativeBlur = HTMLElement.prototype.blur;
+  Object.defineProperty(HTMLElement.prototype, 'blur', {
+    value: function () {
+      if (this.tagName === 'IFRAME' || this.tagName === 'OBJECT') {
+        return; // don't let ad scripts blur the player iframe
+      }
+      return _nativeBlur.apply(this, arguments);
+    },
+    writable: false,
+    configurable: false,
+    enumerable: true
+  });
 })();
