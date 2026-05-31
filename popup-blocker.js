@@ -7,6 +7,7 @@
   Object.defineProperty(window, 'open', {
     value: function () { return null; },
     writable: false,
-    configurable: false
+    configurable: false,
+    enumerable: true
   });
 })();
