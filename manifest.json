@@ -11,7 +11,7 @@
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://streamimdb.ru/*"],
+      "matches": ["https://streamimdb.ru/*", "http://streamimdb.ru/*"],
       "js": ["popup-blocker.js"],
       "run_at": "document_start",
       "world": "MAIN"
